@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
-import { outfit } from "./fonts";
+import { outfit } from "./components/fonts";
+import Navbar from "./components/navbar";
+import Header from "./components/header";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -12,11 +14,15 @@ export default function RootLayout({
 }: Readonly<{
     children: React.ReactNode;
 }>) {
-    return (    
-        <html lang="en">
-            <body className={outfit.variable}>
-                {children}
-            </body>
-        </html>
-    );
+return (    
+    <html lang="en">
+        <body className={outfit.variable}>
+            <Header />
+            
+            <Navbar />
+
+            {children}
+        </body>
+    </html>
+);
 }
